@@ -1,15 +1,16 @@
 import 'dotenv-flow/config.js';
 import consoleStamp from 'console-stamp';
-import cron from 'node-cron';
-
-consoleStamp(console, { label: false });
+import { scheduleJob } from 'node-schedule';
 
 import checkLocations from './helpers/checkLocations.js';
 
-console.log('Server started, will check every minute');
+consoleStamp(console, { label: false });
 
-// every minute
-cron.schedule('*/1 * * * *', () => {
+const INTERVAL_SECONDS = 20;
+
+console.log(`Server started, will check every ${INTERVAL_SECONDS} seconds`);
+
+scheduleJob(`*/${INTERVAL_SECONDS} * * * * *`, () => {
   console.log('Checking...');
   checkLocations().catch(console.error);
 });
