@@ -6,6 +6,10 @@ import sendText from './sendText.js';
 const LOCATIONS_ENDPOINT =
   'https://heb-ecom-covid-vaccine.hebdigital-prd.com/vaccine_locations.json';
 
+// Contains store numbers of locations that (as of the last fetch)
+// had availabilities. Used to not send duplicate alerts for a single opening.
+const activeLocations = new Set();
+
 const checkLocations = async () => {
   const { locations } = await fetch(LOCATIONS_ENDPOINT).then((res) =>
     res.json()
@@ -15,36 +19,46 @@ const checkLocations = async () => {
   // locations[100].openTimeslots = 7;
   // locations[6].openTimeslots = 1;
 
-  const validLocations = locations.filter(
-    (location) => location.openTimeslots > 0
+  for (const location of locations) {
+    const { storeNumber, openTimeslots } = location;
+
+    if (openTimeslots === 0) {
+      activeLocations.delete(storeNumber);
+      continue;
+    }
+
+    if (!activeLocations.has(storeNumber)) {
+      activeLocations.add(storeNumber);
+      await handleLocation(location);
+    }
+  }
+};
+
+const handleLocation = async (location) => {
+  console.log(location);
+  const {
+    name,
+    city,
+    state,
+    openTimeslots,
+    latitude,
+    longitude,
+    url,
+  } = location;
+
+  const { distance, duration } = await getTravelTime(
+    [latitude, longitude].join(',')
   );
 
-  for (const location of validLocations) {
-    console.log(location);
-    const {
-      name,
-      city,
-      state,
-      openTimeslots,
-      latitude,
-      longitude,
-      url,
-    } = location;
+  const message = [
+    `🚨 ${openTimeslots} opening${
+      openTimeslots > 1 ? 's' : ''
+    } at ${name} in ${city}, ${state}`,
+    `${duration} (${distance}) away`,
+    url,
+  ].join('\n\n');
 
-    const { distance, duration } = await getTravelTime(
-      [latitude, longitude].join(',')
-    );
-
-    const message = [
-      `🚨 ${openTimeslots} opening${
-        openTimeslots > 1 ? 's' : ''
-      } at ${name} in ${city}, ${state}`,
-      `${duration} (${distance}) away`,
-      url,
-    ].join('\n\n');
-
-    await sendText(message);
-  }
+  await sendText(message);
 };
 
 export default checkLocations;
