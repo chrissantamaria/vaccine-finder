@@ -1,4 +1,6 @@
-const client = require('twilio')(
+import twilio from 'twilio';
+
+const client = twilio(
   process.env.TWILIO_ACCOUNT_SID,
   process.env.TWILIO_AUTH_TOKEN
 );
@@ -17,4 +19,4 @@ const sendText = async (body) => {
   );
 };
 
-module.exports = sendText;
+export default sendText;

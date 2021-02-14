@@ -1,7 +1,7 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
-const getTravelTime = require('./getTravelTime');
-const sendText = require('./sendText');
+import getTravelTime from './getTravelTime.js';
+import sendText from './sendText.js';
 
 const LOCATIONS_ENDPOINT =
   'https://heb-ecom-covid-vaccine.hebdigital-prd.com/vaccine_locations.json';
@@ -47,4 +47,4 @@ const checkLocations = async () => {
   }
 };
 
-module.exports = checkLocations;
+export default checkLocations;

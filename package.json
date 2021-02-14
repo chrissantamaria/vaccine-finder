@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "Chris Santamaria <chris@santamaria.me>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "start": "node app",
     "dev": "cross-env NODE_ENV=development yarn start",

@@ -1,10 +1,10 @@
-require('dotenv-flow').config();
-require('console-stamp')(console, {
-  label: false,
-});
-const cron = require('node-cron');
+import 'dotenv-flow/config.js';
+import consoleStamp from 'console-stamp';
+import cron from 'node-cron';
 
-const checkLocations = require('./checkLocations');
+consoleStamp(console, { label: false });
+
+import checkLocations from './checkLocations.js';
 
 console.log('Server started, will check every minute');
 

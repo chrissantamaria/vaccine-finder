@@ -1,5 +1,5 @@
-const fetch = require('node-fetch');
-const qs = require('querystring');
+import fetch from 'node-fetch';
+import qs from 'querystring';
 
 const MAPS_API_ENDPOINT =
   'https://maps.googleapis.com/maps/api/distancematrix/json';
@@ -22,4 +22,4 @@ const getTravelTime = async (location) => {
   };
 };
 
-module.exports = getTravelTime;
+export default getTravelTime;
