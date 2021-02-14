@@ -5,17 +5,19 @@
   "license": "MIT",
   "scripts": {
     "start": "node app",
+    "dev": "cross-env NODE_ENV=development yarn start",
     "format": "prettier --ignore-path .gitignore --write \"**/*.{js,md}\"",
     "lint": "eslint --ignore-path .gitignore ."
   },
   "dependencies": {
     "console-stamp": "^0.2.9",
-    "dotenv": "^8.2.0",
+    "dotenv-flow": "^3.2.0",
     "node-cron": "^2.0.3",
     "node-fetch": "^2.6.1",
     "twilio": "^3.56.0"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "eslint": "^7.20.0",
     "prettier": "^2.2.1"
   }

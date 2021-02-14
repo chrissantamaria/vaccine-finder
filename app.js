@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv-flow').config();
 require('console-stamp')(console, {
   label: false,
 });
