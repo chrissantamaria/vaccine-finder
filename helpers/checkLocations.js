@@ -35,7 +35,7 @@ const checkLocations = async () => {
 };
 
 const handleLocation = async (location) => {
-  console.log(location);
+  console.log('Availability found!', location);
   const {
     name,
     city,
@@ -49,6 +49,7 @@ const handleLocation = async (location) => {
   const { distance, duration } = await getTravelTime(
     [latitude, longitude].join(',')
   );
+  console.log({ distance, duration });
 
   const message = [
     `🚨 ${openTimeslots} opening${
