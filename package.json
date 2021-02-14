@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node app",
     "dev": "cross-env NODE_ENV=development yarn start",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.{js,md}\"",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{js,json,md}\"",
     "lint": "eslint --ignore-path .gitignore ."
   },
   "dependencies": {
