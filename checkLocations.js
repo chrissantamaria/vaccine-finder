@@ -15,7 +15,9 @@ const checkLocations = async () => {
   // locations[100].openTimeslots = 7;
   // locations[6].openTimeslots = 1;
 
-  const validLocations = locations.filter((location) => location.openTimeslots);
+  const validLocations = locations.filter(
+    (location) => location.openTimeslots > 0
+  );
 
   for (const location of validLocations) {
     console.log(location);
