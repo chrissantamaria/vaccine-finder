@@ -15,10 +15,6 @@ const checkLocations = async () => {
     res.json()
   );
 
-  // Mock test data
-  // locations[100].openTimeslots = 7;
-  // locations[6].openTimeslots = 1;
-
   for (const location of locations) {
     const { storeNumber, openTimeslots } = location;
 
