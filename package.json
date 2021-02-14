@@ -1,0 +1,14 @@
+{
+  "name": "vaccine-finder",
+  "version": "1.0.0",
+  "author": "Chris Santamaria <chris@santamaria.me>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.1",
+    "twilio": "^3.56.0"
+  }
+}
