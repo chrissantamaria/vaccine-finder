@@ -15,7 +15,7 @@ Some additional features:
 
 ## Setup
 
-You will need [Node.js](https://nodejs.org/en) 13+ and [Yarn](https://yarnpkg.com).
+You will need [Node.js](https://nodejs.org/en) 13+ and [Yarn](https://yarnpkg.com). You can also install [Volta](https://volta.sh) to automatically use the pinned Node + Yarn versions.
 
 Install dependencies:
 

@@ -4,9 +4,6 @@
   "author": "Chris Santamaria <chris@santamaria.me>",
   "license": "WTFPL",
   "type": "module",
-  "engines": {
-    "node": ">=13"
-  },
   "scripts": {
     "start": "node app",
     "dev": "cross-env NODE_ENV=development yarn start",
@@ -24,5 +21,9 @@
     "cross-env": "^7.0.3",
     "eslint": "^7.20.0",
     "prettier": "^2.2.1"
+  },
+  "volta": {
+    "node": "14.15.5",
+    "yarn": "1.22.10"
   }
 }
