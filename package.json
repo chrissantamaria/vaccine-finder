@@ -4,11 +4,17 @@
   "author": "Chris Santamaria <chris@santamaria.me>",
   "license": "MIT",
   "scripts": {
-    "start": "node app"
+    "start": "node app",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{js,md}\"",
+    "lint": "eslint --ignore-path .gitignore ."
   },
   "dependencies": {
     "dotenv": "^8.2.0",
     "node-fetch": "^2.6.1",
     "twilio": "^3.56.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.20.0",
+    "prettier": "^2.2.1"
   }
 }
