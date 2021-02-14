@@ -11,6 +11,5 @@ const INTERVAL_SECONDS = 20;
 console.log(`Server started, will check every ${INTERVAL_SECONDS} seconds`);
 
 scheduleJob(`*/${INTERVAL_SECONDS} * * * * *`, () => {
-  console.log('Checking...');
   checkLocations().catch(console.error);
 });
