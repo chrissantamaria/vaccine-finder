@@ -2,7 +2,7 @@
   "name": "vaccine-finder",
   "version": "1.0.0",
   "author": "Chris Santamaria <chris@santamaria.me>",
-  "license": "MIT",
+  "license": "WTFPL",
   "type": "module",
   "scripts": {
     "start": "node app",
