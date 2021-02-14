@@ -13,7 +13,7 @@ const checkLocations = async () => {
 
   // Mock test data
   // locations[100].openTimeslots = 7;
-  locations[6].openTimeslots = 1;
+  // locations[6].openTimeslots = 1;
 
   const validLocations = locations.filter((location) => location.openTimeslots);
 
