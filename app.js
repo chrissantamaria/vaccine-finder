@@ -4,7 +4,7 @@ import cron from 'node-cron';
 
 consoleStamp(console, { label: false });
 
-import checkLocations from './checkLocations.js';
+import checkLocations from './helpers/checkLocations.js';
 
 console.log('Server started, will check every minute');
 
