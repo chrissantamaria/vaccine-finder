@@ -6,7 +6,7 @@ A tiny Node.js app to help automate the search for a COVID-19 vaccine
 
 COVID-19 vaccines are (understandably) in high demand. Many distributors offer web portals to check for availability, those these are frustrating to use and require frequent manual checking.
 
-This app automtates the process by running in the background and polling [H-E-B Pharmacy](https://vaccine.heb.com) every 20 seconds to check for appointment availabilities. If one is found, the travel time + distance is calculated with the [Google Maps API](https://developers.google.com/maps/documentation/distance-matrix/overview) and a SMS alert is sent with [Twilio](https://www.twilio.com/sms).
+This app automates the process by running in the background and polling [H-E-B Pharmacy](https://vaccine.heb.com) every 20 seconds to check for appointment availabilities. If one is found, the travel time + distance is calculated with the [Google Maps API](https://developers.google.com/maps/documentation/distance-matrix/overview) and a SMS alert is sent with [Twilio](https://www.twilio.com/sms).
 
 Some additional features:
 
